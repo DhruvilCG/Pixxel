@@ -11,7 +11,11 @@ const Header = () => {
 
     return (
         <header className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 text-nowrap">
+            {/* Center - Glass Navigation Container */}
+            
             <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-full px-8 py-3 flex items-center justify-between gap-8">
+                
+                {/* Logo */}
                 <Link href="/" className="mr-10 md:mr-20">
                     <Image
                         src="/logo-text.png"
@@ -44,6 +48,11 @@ const Header = () => {
                         </Link>
                     </div>
                     )}
+
+                    {/* Auth Actions */}
+                    <div className="flex items-center gap-3 ml-10 md:ml-20">
+                          auth
+                    </div>
             </div>
         </header>
     )
