@@ -4,6 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { usePathname } from "next/navigation";
+import { SignedIn, SignedOut, SignInButton, SignUpButton, UserButton } from "@clerk/nextjs";
+import { Button } from "./ui/button";
 
 const Header = () => {
 
@@ -51,7 +53,17 @@ const Header = () => {
 
                     {/* Auth Actions */}
                     <div className="flex items-center gap-3 ml-10 md:ml-20">
-                          auth
+                        <SignedOut>
+                          <SignInButton>
+                            <Button variant="glass" className={"hidden sm:flex"}>Sign In</Button>
+                          </SignInButton>
+                          <SignUpButton>
+                            <Button variant="primary">Get Started</Button>
+                          </SignUpButton>
+                        </SignedOut>
+                        <SignedIn>
+                          <UserButton />
+                        </SignedIn>
                     </div>
             </div>
         </header>
